@@ -16,7 +16,7 @@
 # 支持配置多个友链页面并指定不同主题策略，每个用{}分隔，它们会被同时爬取，数据保存在一起。
 
 LINK: [
-     { link: "https://weiguang.eu.org/link/", theme: "common2" },  # 友链页地址1，修改为你的友链页地址
+    # { link: "https://weiguang.eu.org/link/", theme: "common2" },  # 本站友链页被Cloudflare拦截，暂用SETTINGS_FRIENDS_LINKS替代
 #     { link: "https://noionion.top/link/", theme: "butterfly" }, # 友链页地址2
     # { link: "https://immmmm.com/about/", theme: "common1" }, # 友链页地址3
 #     ...
@@ -31,17 +31,19 @@ LINK: [
 #       avatar：必填，头像地址
 #       suffix：选填，自定义订阅后缀，主要针对不规范的网站订阅后缀，见示例2
 SETTINGS_FRIENDS_LINKS: {
-    enable: false,
+    enable: true,
     json_api_or_path: "",
     list: [
-        # 示例1：
-        # ["贰猹の小窝", "https://noionion.top/", "https://pub-noionion.oss-cn-hangzhou.aliyuncs.com/head.jpg"],
-        # ["Akilarの糖果屋", "https://akilar.top/", "https://akilar.top/images/headimage.png"],
-        # 示例2：使用suffix的配置如下
-        # 程序目前自动获取 "atom.xml", "feed/atom", "rss.xml", "rss2.xml", "feed", "index.xml" 这些后缀
-        # 如果目标地址的后缀不在其中，就可以在这里添加
-        # 比如 https://elizen.me/hello.xml ，填写：
-        # ["elizen", "https://elizen.me/", "https://akilar.top/images/headimage.png", "hello.xml"]
+        ["清羽飞扬", "https://blog.liushen.fun/", "https://blog.liushen.fun/info/avatar.ico"],
+        ["老刘博客", "https://www.liublog.cn/", "https://www.liublog.cn/img/favicon.png"],
+        ["Black Flies", "https://www.yyyzyyyz.cn/", "https://npm.elemecdn.com/imgscdn/img/202111191951780.JPG"],
+        ["安知鱼", "https://blog.anheyu.com/", "https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg"],
+        ["张洪Heo", "https://blog.zhheo.com/", "https://blog.zhheo.com/img/favicon4.0.webp"],
+        ["Akilar", "https://akilar.top/", "https://npm.elemecdn.com/akiblog@1.0.2/img/author.webp"],
+        ["Leonus", "https://blog.leonus.cn/", "https://q1.qlogo.cn/g?b=qq&nk=990320751&s=5"],
+        ["轻笑Chuckle", "https://www.qcqx.cn/", "https://www.qcqx.cn/head.webp"],
+        ["风记星辰", "https://www.thyuu.com/", "https://std.thyuu.com/logo.webp"],
+        ["山岳库博", "https://kmar.top/", "https://cdn.jsdelivr.net/npm/@kmar/fonts/avatar/own.png"]
     ]
 }
 
