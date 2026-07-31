@@ -51,6 +51,8 @@ BLOCK_SITE: [
 #    https://example.com/, # 屏蔽 https://example.com/
 #    .*\.com,  # 含有.com的全部屏蔽
 #    ^http://,  # http://开头的全部屏蔽
+    "https?://hexo\\.io/",
+    "https?://hexo\\.anheyu\\.com/",
 ]
 
 # 是否反向屏蔽站点，true表示反向屏蔽，false表示正向屏蔽
