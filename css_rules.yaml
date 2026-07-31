@@ -287,6 +287,11 @@ link_page_rules:
       {
         author: [{ selector: ".cf-friends-name", attr: "text" }],
         link: [{ selector: "a.cf-friends-link", attr: "href" }],
-        avatar: [{ selector: ".cf-friends-avatar", attr: "src" }],
+        avatar:
+          [
+            { selector: ".cf-friends-avatar", attr: "src" },
+            { selector: ".cf-friends-avatar", attr: "data-lazy-src" },
+            { selector: ".cf-friends-avatar", attr: "cf-src" },
+          ],
       },
   }
