@@ -59,7 +59,7 @@ BLOCK_SITE_REVERSE: false
 
 # 从每个主页中最多获取几篇文章，请设置一个正整数
 # 设置为0表示无限制
-MAX_POSTS_NUM:  5
+MAX_POSTS_NUM:  0
 
 # 如果要启用HTTP代理：
 # 对于github部署：添加secret
