@@ -34,8 +34,16 @@ async fn get_joinset_result(
 /// 构建请求客户端
 pub fn build_client(timeout: u64, retry_attempts: u32) -> ClientWithMiddleware {
     let timeout = Duration::new(timeout, 0);
+    // 自定义 UA：部分友链站（如 inkss.cn）对 Go-http-client/curl/wget/python 等 UA 做 RSS 抓取守卫，
+    // 命中时会返回"抓取异常提示"假 feed，导致朋友圈收录假文章。浏览器风格 UA 可避开此类拦截。
+    // 可通过环境变量 FC_USER_AGENT 覆盖。
+    let user_agent = tools::get_env_var("FC_USER_AGENT").unwrap_or_else(|_| {
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+            .to_string()
+    });
     let baseclient = CL::new()
         .timeout(timeout)
+        .user_agent(user_agent)
         .use_rustls_tls()
         .danger_accept_invalid_certs(true);
 
