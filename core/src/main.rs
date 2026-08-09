@@ -445,9 +445,7 @@ async fn main() {
     let css_rules: tools::Value = tools::get_yaml("./css_rules.yaml").unwrap();
     let fc_settings = tools::get_yaml_settings("./fc_settings.yaml").unwrap();
 
-    // 超时放宽到 60s：部分站点（如 inkss.cn）对海外/数据中心 IP 限速，
-    // 10s 超时会导致大 feed 下载中途截断，feed-rs 只能解析出前几篇文章
-    let client = download::build_client(60, 3);
+    let client = download::build_client(10, 3);
 
     // let _cssrule = css_rules.clone();
     let format_base_friends =
